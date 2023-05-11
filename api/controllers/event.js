@@ -43,6 +43,7 @@ export const getEvent = async (req, res, next) => {
 };
 export const getAllEvent = async (req, res, next) => {
   // const {min,max,...others}=req.query  .limit(req.query.limit)
+  console.log("d");
   try {
     const Events = await event.find(req.query);
     res.status(200).json(Events);
