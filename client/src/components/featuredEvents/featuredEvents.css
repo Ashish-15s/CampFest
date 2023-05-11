@@ -1,0 +1,36 @@
+.fe {
+  width: 100%;
+  max-width: 1024px;
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+}
+.feItem {
+  flex: 1;
+  gap: 10px;
+  display: flex;
+  flex-direction: column;
+}
+.feImg {
+  width: 100%;
+}
+.feName {
+  font-weight: bold;
+}
+.feCollege {
+  font-weight: 300;
+}
+.fePrice {
+  font-weight: 500;
+}
+.feRating > button {
+  background-color: grey;
+  color: white;
+  border: none;
+  padding: 3px;
+  margin-right: 10px;
+  font-weight: bold;
+}
+.feRating > span {
+  font-size: 14px;
+}
