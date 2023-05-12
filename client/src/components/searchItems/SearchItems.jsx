@@ -1,16 +1,13 @@
+import { Link } from "react-router-dom";
 import "./searchItems.css";
-const SearchItems = () => {
+const SearchItems = ({ item }) => {
   return (
     <div className="searchItem">
-      <img
-        src="https://cdn.britannica.com/49/127649-050-31417AF3/Heath-Ledger-Joker-Christian-Bale-The-Dark-Knight-2008.jpg?w=300"
-        alt="img"
-        className="siImage"
-      />
+      <img src={item.photos[0]} alt="img" className="siImage" />
       <div className="siDesc">
-        <h1 className="siTitle">Fest Name</h1>
-        <span className="siCollege">College Name</span>
-        <span className="siCity">City Name</span>
+        <h1 className="siTitle">{item.title}</h1>
+        <span className="siCollege">{item.college}</span>
+        <span className="siCity">{item.city}</span>
         <span className="siSubtitle">Additional attraction of fest</span>
         <span className="siFeatures">descripton about venue</span>
         <span className="siCancelOp">Free cancellatioin</span>
@@ -21,11 +18,13 @@ const SearchItems = () => {
       <div className="siDetails">
         <div className="siRating">
           <span>Excellent</span>
-          <button>9</button>
+          <button>{item.rating}</button>
         </div>
         <div className="siDetailTexts">
-          <span className="siPrice">$ 99</span>
-          <button className="siCheckButton">See availability</button>
+          <span className="siPrice">{item.price}</span>
+          <Link to={`/events/${item._id}`}>
+            <button className="siCheckButton">See availability</button>
+          </Link>
         </div>
       </div>
     </div>

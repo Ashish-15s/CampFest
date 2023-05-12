@@ -21,6 +21,18 @@ const eventSchema = new mongoose.Schema({
     type: Boolean,
     default: false,
   },
+  college: {
+    type: String,
+    required: true,
+  },
+  price: {
+    type: String,
+    require: true,
+  },
+  rating: {
+    type: String,
+    default: "NA",
+  },
   photos: {
     type: [String],
   },

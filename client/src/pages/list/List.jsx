@@ -4,12 +4,26 @@ import Header from "../../components/header/Header";
 import Navbar from "../../components/navbar/Navbar";
 import SearchItems from "../../components/searchItems/SearchItems";
 import "./list.css";
+import useFetch from "../../hooks/userFetch";
 
 const List = () => {
   const fest = useLocation();
-  const [festName] = useState(fest.state.festName);
-  const [collegeName] = useState(fest.state.collegeName);
-  const [cityName] = useState(fest.state.cityName);
+  const [festName, setFestName] = useState(fest.state.festName);
+  const [collegeName, setCollegeName] = useState(fest.state.collegeName);
+  const [cityName, setCityName] = useState(fest.state.cityName);
+
+  const pramName =
+    festName === "" ? (collegeName === "" ? "city" : "college") : "title";
+  const pram =
+    festName === "" ? (collegeName === "" ? cityName : collegeName) : festName;
+  const { data, loading, error, reFetch } = useFetch(
+    `/event?${pramName}=${pram}`
+  );
+
+  const handleClick = () => {
+    reFetch();
+  };
+
   return (
     <div>
       <Navbar />
@@ -20,28 +34,41 @@ const List = () => {
             <h1 className="listTitle">Search</h1>
             <div className="listItem">
               <label>Event</label>
-              <input type="text" placeholder={festName}></input>
+              <input
+                type="text"
+                placeholder={festName}
+                onChange={(e) => setFestName(e.target.value)}
+              ></input>
             </div>
             <div className="listItem">
               <label>College</label>
-              <input type="text" placeholder={collegeName}></input>
+              <input
+                type="text"
+                placeholder={collegeName}
+                onChange={(e) => setCollegeName(e.target.value)}
+              ></input>
             </div>
             <div className="listItem">
               <label>City</label>
-              <input type="text" placeholder={cityName}></input>
+              <input
+                type="text"
+                placeholder={cityName}
+                onChange={(e) => setCityName(e.target.value)}
+              ></input>
             </div>
-            <button>Search</button>
+            <button onClick={handleClick}>Search</button>
           </div>
 
           <div className="listResult">
-            <SearchItems />
-            <SearchItems />
-            <SearchItems />
-            <SearchItems />
-            <SearchItems />
-            <SearchItems />
-            <SearchItems />
-            <SearchItems />
+            {loading ? (
+              "loading"
+            ) : (
+              <>
+                {data.map((item) => (
+                  <SearchItems item={item} key={item._id} />
+                ))}
+              </>
+            )}
           </div>
         </div>
       </div>
