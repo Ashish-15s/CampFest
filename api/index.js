@@ -31,7 +31,7 @@ app.use("/event", eventRoute);
 app.use((err, req, res, next) => {
   const errStatus = err.status || 500;
   const errMessage = err.message || "something went wrong";
-  return res.status(err.status).json(err.message);
+  return res.status(errStatus).json(errMessage);
 });
 
 app.listen(8000, () => {

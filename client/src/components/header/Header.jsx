@@ -7,14 +7,24 @@ import {
   faUniversity,
 } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { SearchContext } from "../../context/SearchContext";
+import { AuthContext } from "../../context/AuthContext";
 
 const Header = ({ type }) => {
   const [festName, setFestName] = useState("");
   const [cityName, setCityName] = useState("");
   const [collegeName, setCollegeName] = useState("");
   const navigate = useNavigate();
+
+  const { dispatch } = useContext(SearchContext);
+  const { user } = useContext(AuthContext);
+
   const handleSearch = () => {
+    dispatch({
+      type: "NEW_SEARCH",
+      payload: { festName, cityName, collegeName },
+    });
     navigate("/events", { state: { festName, collegeName, cityName } });
   };
   return (
@@ -45,7 +55,7 @@ const Header = ({ type }) => {
             {" "}
             <h1 className="headerTitle">CampFest</h1>
             <p className="headerDesc">One place to explore college fests</p>
-            <button className="headerBtn">sign/register</button>
+            {!user && <button className="headerBtn">sign/register</button>}
             <div className="headerSearch">
               <div className="headerSearchItem">
                 <FontAwesomeIcon icon={faTicket} />

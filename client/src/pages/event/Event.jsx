@@ -5,25 +5,33 @@ import {
   faLocationDot,
 } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import Header from "../../components/header/Header";
 import MailList from "../../components/mailList/MailList";
 import Navbar from "../../components/navbar/Navbar";
 import "./event.css";
 import useFetch from "../../hooks/userFetch";
-import { useLocation } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import Reserve from "../../components/reserve/Reserve";
+import { AuthContext } from "../../context/AuthContext";
 
 const Event = () => {
   const location = useLocation();
   const id = location.pathname.split("/")[2];
   const [slideNumber, setSlideNumber] = useState(0);
   const [open, setOpen] = useState(false);
-
+  const [openModal, setOpenModal] = useState(false);
+  const navigate = useNavigate();
   const { data, loading, error } = useFetch(`/event/find/${id}`);
+  const { user } = useContext(AuthContext);
 
   const handleOpen = (i) => {
     setSlideNumber(i);
     setOpen(true);
+  };
+
+  const handleClick = () => {
+    user ? setOpenModal(true) : navigate("/login");
   };
 
   const handleMove = (direction) => {
@@ -35,6 +43,7 @@ const Event = () => {
     }
     setSlideNumber(newSlideNumber);
   };
+
   return (
     <div>
       <Navbar />
@@ -118,15 +127,16 @@ const Event = () => {
               </div>
               <div className="eventDetailsPrice">
                 <h2>
-                  <b>$99</b>
+                  <b>₹99</b>
                 </h2>
-                <button>Register Now</button>
+                <button onClick={handleClick}>Register Now</button>
               </div>
             </div>
           </div>
           <MailList />
         </div>
-      )}{" "}
+      )}
+      {openModal && <Reserve setOpen={setOpenModal} eventId={id} />}
     </div>
   );
 };
