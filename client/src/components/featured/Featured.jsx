@@ -7,53 +7,88 @@ const Featured = () => {
   );
 
   return (
-    <div className="featured">
+    <div>
       {loading ? (
         "loading..."
       ) : (
         <>
-          <div className="featuredItem">
-            <img
-              className="featuredImg"
-              src="https://wallpapers-clan.com/wp-content/uploads/2021/03/spider-man-pointing-spider-man-meme-wallpaper-scaled.jpg"
-              alt="img"
-            ></img>
-            <div className="featuredTitles">
-              <h1>Jaipur</h1>
-              <h2>{data[0]} College Fests</h2>
-            </div>
-          </div>
-          <div className="featuredItem">
-            <img
-              className="featuredImg"
-              src="https://wallpapers-clan.com/wp-content/uploads/2021/03/spider-man-pointing-spider-man-meme-wallpaper-2-scaled.jpg"
-              alt="img"
-            ></img>
-            <div className="featuredTitles">
-              <h1>Mumbai</h1>
-              <h2>{data[1]} College Fests</h2>
-            </div>
-          </div>
-          <div className="featuredItem">
-            <img
-              className="featuredImg"
-              src="https://wallpapers-clan.com/wp-content/uploads/2021/03/spider-man-pointing-spider-man-meme-wallpaper-scaled.jpg"
-              alt="img"
-            ></img>
-            <div className="featuredTitles">
-              <h1>Delhi</h1>
-              <h2>{data[2]} College Fests</h2>
-            </div>
-          </div>
-          <div className="featuredItem">
-            <img
-              className="featuredImg"
-              src="https://wallpapers-clan.com/wp-content/uploads/2021/03/spider-man-pointing-spider-man-meme-wallpaper-2-scaled.jpg"
-              alt="img"
-            ></img>
-            <div className="featuredTitles">
-              <h1>Pune</h1>
-              <h2>{data[3]} College Fests</h2>
+          <div id="cards_landscape_wrap-2">
+            <div className="container">
+              <div className="row">
+                <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                  <a href="">
+                    <div className="card-flyer">
+                      <div className="text-box">
+                        <div className="image-box">
+                          <img
+                            src="https://img.traveltriangle.com/blog/wp-content/uploads/2019/11/cover-image-of-jaipur-in-march_22nd-nov.jpg"
+                            alt=""
+                          />
+                        </div>
+                        <div className="text-container">
+                          <h6>Jaipur</h6>
+                          <p>{data[2]} College Fests</p>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                  <a href="">
+                    <div className="card-flyer">
+                      <div className="text-box">
+                        <div className="image-box">
+                          <img
+                            src="https://tourscanner.com/blog/wp-content/uploads/2022/07/fun-and-unusual-things-to-do-in-Mumbai.jpg"
+                            alt=""
+                          />
+                        </div>
+                        <div className="text-container">
+                          <h6>Mumbai</h6>
+                          <p>{data[2]} College Fests</p>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                  <a href="">
+                    <div className="card-flyer">
+                      <div className="text-box">
+                        <div className="image-box">
+                          <img
+                            src="https://cdn.britannica.com/37/189837-050-F0AF383E/New-Delhi-India-War-Memorial-arch-Sir.jpg"
+                            alt=""
+                          />
+                        </div>
+
+                        <div className="text-container">
+                          <h6>Delhi</h6>
+                          <p>{data[2]} College Fests</p>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+                <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                  <a href="">
+                    <div className="card-flyer">
+                      <div className="text-box">
+                        <div className="image-box">
+                          <img
+                            src="https://images.herzindagi.info/image/2022/Oct/tourist-places-to-visit-in-pune.jpg"
+                            alt=""
+                          />
+                        </div>
+                        <div className="text-container">
+                          <h6>Pune</h6>
+                          <p>{data[2]} College Fests</p>
+                        </div>
+                      </div>
+                    </div>
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </>

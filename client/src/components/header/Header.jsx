@@ -36,15 +36,15 @@ const Header = ({ type }) => {
       >
         <div className="headerList">
           <div className="headerListItem active">
-            <FontAwesomeIcon icon={faTicket} />
+            <FontAwesomeIcon icon={faTicket} className="headerIcon" />
             <span>Explore Fest</span>{" "}
           </div>
           <div className="headerListItem">
-            <FontAwesomeIcon icon={faTicket} />
+            <FontAwesomeIcon icon={faTicket} className="headerIcon" />
             <span>Promote events</span>
           </div>
           <div className="headerListItem">
-            <FontAwesomeIcon icon={faTicket} />
+            <FontAwesomeIcon icon={faTicket} className="headerIcon" />
 
             <span>Fest Tickets</span>
           </div>
@@ -52,45 +52,57 @@ const Header = ({ type }) => {
 
         {type !== "list" && (
           <>
-            {" "}
             <h1 className="headerTitle">CampFest</h1>
             <p className="headerDesc">One place to explore college fests</p>
-            {!user && <button className="headerBtn">sign/register</button>}
+            {!user && (
+              <button className="headerBtn btn btn-outline-secondary">
+                sign/register
+              </button>
+            )}
             <div className="headerSearch">
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faTicket} />
+                <FontAwesomeIcon icon={faTicket} className="headerSearchIcon" />
                 <input
                   type="text"
                   placeholder="Fest Name"
                   className="headerSearchInput"
                   onChange={(e) => setFestName(e.target.value)}
-                ></input>
+                />
               </div>
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faUniversity} />
+                <FontAwesomeIcon
+                  icon={faUniversity}
+                  className="headerSearchIcon"
+                />
                 <input
                   type="text"
                   placeholder="College"
                   className="headerSearchInput"
                   onChange={(e) => setCollegeName(e.target.value)}
-                ></input>
+                />
               </div>
 
               <div className="headerSearchItem">
-                <FontAwesomeIcon icon={faLocation} />
+                <FontAwesomeIcon
+                  icon={faLocation}
+                  className="headerSearchIcon"
+                />
                 <input
                   type="text"
                   placeholder="City"
                   className="headerSearchInput"
                   onChange={(e) => setCityName(e.target.value)}
-                ></input>
+                />
               </div>
               <div className="headerSearchItem">
-                <button className="headerBtn" onClick={handleSearch}>
+                <button
+                  className="headerSearchBtn btn btn-outline-light"
+                  onClick={handleSearch}
+                >
                   Search
                 </button>
               </div>
-            </div>{" "}
+            </div>
           </>
         )}
       </div>

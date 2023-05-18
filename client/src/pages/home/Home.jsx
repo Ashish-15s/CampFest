@@ -13,9 +13,13 @@ const Home = () => {
       <Header />
       <div className="homeContainer">
         <Featured />
-        <h1 className="homeTitle">Browse by fest type</h1>
+        <h4 className="homeTitle">
+          <b> Browse by fest type</b>
+        </h4>
         <EventList />
-        <h1 className="homeTitle">Featured Fest</h1>
+        <h4 className="homeTitle">
+          <b>Featured Fest</b>{" "}
+        </h4>
         <FeaturedEvents />
         <MailList />
       </div>

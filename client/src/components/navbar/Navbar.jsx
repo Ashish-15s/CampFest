@@ -16,8 +16,14 @@ const Navbar = () => {
           user.username
         ) : (
           <div className="navItems">
-            <button className="navButton">Register</button>
-            <button className="navButton">login</button>
+            <button className="navButton btn btn-outline-secondary">
+              Register
+            </button>
+            <Link to="/login">
+              <button className="navButton btn btn-outline-secondary">
+                login
+              </button>
+            </Link>
           </div>
         )}
       </div>

@@ -8,24 +8,40 @@ const FeaturedEvents = () => {
         "loading"
       ) : (
         <>
-          {data.map((item) => (
-            <div className="feItem" key={item._id}>
-              <img
-                className="feImg"
-                src="https://cdn.britannica.com/49/127649-050-31417AF3/Heath-Ledger-Joker-Christian-Bale-The-Dark-Knight-2008.jpg?w=300"
-                alt="img"
-              ></img>
-              <span className="feName">{item.title}</span>
-              <span className="feCollege">{item.college}</span>
-              <span className="fePrice">Price : {item.price}</span>
-              {item.rating && (
-                <div className="feRating">
-                  <button>{item.rating}</button>
-                  <span>Exc</span>
-                </div>
-              )}
+          <div class="container-fluid">
+            <div class="container">
+              <div class="row">
+                {data.map((item) => (
+                  <div class="col-sm-3">
+                    <div class="card card_red text-center">
+                      <div class="title">
+                        <i class="fa fa-paper-plane" aria-hidden="true"></i>
+                      </div>
+                      <div class="price">
+                        <h4>{item.title}</h4>
+                      </div>
+                      <div class="option">
+                        <ul>
+                          <li>
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                            {item.college}
+                          </li>
+                          <li>
+                            <i class="fa fa-check" aria-hidden="true"></i>₹
+                            {item.price}
+                          </li>
+                          <li>
+                            <i class="fa fa-check" aria-hidden="true"></i>
+                            {item.rating}
+                          </li>
+                        </ul>
+                      </div>
+                    </div>
+                  </div>
+                ))}{" "}
+              </div>
             </div>
-          ))}
+          </div>
         </>
       )}
     </div>

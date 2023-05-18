@@ -12,14 +12,22 @@ const List = () => {
   const [collegeName, setCollegeName] = useState(fest.state.collegeName);
   const [cityName, setCityName] = useState(fest.state.cityName);
 
-  const pramName =
-    festName === "" ? (collegeName === "" ? "city" : "college") : "title";
-  const pram =
-    festName === "" ? (collegeName === "" ? cityName : collegeName) : festName;
-  const { data, loading, error, reFetch } = useFetch(
-    `/event?${pramName}=${pram}`
-  );
+  var url = `event/?title=${festName}&college=${collegeName}&city=${cityName}`;
 
+  festName === ""
+    ? collegeName === ""
+      ? (url = `event/?city=${cityName}`)
+      : cityName === ""
+      ? (url = url = `event/?college=${collegeName}`)
+      : (url = `event/?college=${collegeName}&city=${cityName}`)
+    : collegeName === ""
+    ? cityName === ""
+      ? (url = `event/?title=${festName}`)
+      : (url = `event/?title=${festName}&city=${cityName}`)
+    : cityName === ""
+    ? (url = `event/?title=${festName}&college=${collegeName}`)
+    : (url = `event/?title=${festName}&college=${collegeName}&city=${cityName}`);
+  const { data, loading, error, reFetch } = useFetch(url);
   const handleClick = () => {
     reFetch();
   };
@@ -56,7 +64,9 @@ const List = () => {
                 onChange={(e) => setCityName(e.target.value)}
               ></input>
             </div>
-            <button onClick={handleClick}>Search</button>
+            <button onClick={handleClick} className="btn btn-outline-secondary">
+              Search
+            </button>
           </div>
 
           <div className="listResult">
