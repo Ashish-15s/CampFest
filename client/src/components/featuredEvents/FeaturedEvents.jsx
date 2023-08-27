@@ -2,7 +2,7 @@ import "./featuredEvents.css";
 import useFetch from "../../hooks/userFetch";
 import { Link } from "react-router-dom";
 const FeaturedEvents = () => {
-  const { data, loading, error } = useFetch("/event?featured=true");
+  const { data, loading } = useFetch("/event?featured=true");
   return (
     <div className="fe">
       {loading ? (
@@ -17,6 +17,7 @@ const FeaturedEvents = () => {
                 <div class="col-12 col-md-6 col-lg-4">
                   <div class="fcard card">
                     <img
+                      alt="img"
                       className="card-image"
                       src={
                         item.photos[0] ||

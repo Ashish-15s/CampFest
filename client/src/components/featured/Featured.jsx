@@ -2,7 +2,7 @@ import useFetch from "../../hooks/userFetch";
 import "./featured.css";
 
 const Featured = () => {
-  const { data, loading, error } = useFetch(
+  const { data, loading } = useFetch(
     "/event/countByCity?cities=jaipur,delhi,mumbai,pune"
   );
 

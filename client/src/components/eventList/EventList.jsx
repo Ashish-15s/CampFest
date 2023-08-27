@@ -2,7 +2,7 @@ import "./eventList.css";
 import useFetch from "../../hooks/userFetch";
 
 const EventList = () => {
-  const { data, loading, error } = useFetch("/event/countByType");
+  const { data, loading } = useFetch("/event/countByType");
   const images = [
     "https://b2662075.smushcdn.com/2662075/wp-content/uploads/@2x-Blog-Technical-Skills-animation.gif?lossy=0&strip=1&webp=1",
     "https://images.pexels.com/photos/1763075/pexels-photo-1763075.jpeg?auto=compress&cs=tinysrgb&w=600",
@@ -25,22 +25,20 @@ const EventList = () => {
                 {data &&
                   images.map((img, i) => (
                     <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
-                      <a href="#">
-                        <div className="card-flyer">
-                          <div className="text-box">
-                            <div className="image-box">
-                              <img src={img} alt="" />
-                            </div>
-                            <div className="text-container">
-                              <h6>{data[i]?.type}</h6>
-                              <p>
-                                {" "}
-                                {data[i]?.count} {data[i]?.type}
-                              </p>
-                            </div>
+                      <div className="card-flyer">
+                        <div className="text-box">
+                          <div className="image-box">
+                            <img src={img} alt="" />
+                          </div>
+                          <div className="text-container">
+                            <h6>{data[i]?.type}</h6>
+                            <p>
+                              {" "}
+                              {data[i]?.count} {data[i]?.type}
+                            </p>
                           </div>
                         </div>
-                      </a>
+                      </div>
                     </div>
                   ))}
               </div>

@@ -46,7 +46,11 @@ const Footer = () => {
               </p>
               <p>
                 <i className="fas fa-envelope me"></i>
-                <a href="https://github.com/Ashish-15s" target="_blank">
+                <a
+                  href="https://github.com/Ashish-15s"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   Github
                 </a>
               </p>
@@ -55,6 +59,7 @@ const Footer = () => {
                 <a
                   href="https://linkedin.com/in/ashish-sharma-588a36222"
                   target="_blank"
+                  rel="noreferrer"
                 >
                   LinkedIn
                 </a>

@@ -28,7 +28,7 @@ const List = () => {
     : cityName === ""
     ? (url = `event/?title=${festName}&college=${collegeName}`)
     : (url = `event/?title=${festName}&college=${collegeName}&city=${cityName}`);
-  const { data, loading, error, reFetch } = useFetch(url);
+  const { data, loading, reFetch } = useFetch(url);
   const handleClick = () => {
     reFetch();
   };

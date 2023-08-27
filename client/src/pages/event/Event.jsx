@@ -22,7 +22,7 @@ const Event = () => {
   const [open, setOpen] = useState(false);
   const [openModal, setOpenModal] = useState(false);
   const navigate = useNavigate();
-  const { data, loading, error } = useFetch(`/event/find/${id}`);
+  const { data, loading } = useFetch(`/event/find/${id}`);
   const { user } = useContext(AuthContext);
 
   const handleOpen = (i) => {
