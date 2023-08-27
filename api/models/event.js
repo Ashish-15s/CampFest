@@ -25,6 +25,9 @@ const eventSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  desc: {
+    type: String,
+  },
   price: {
     type: String,
     require: true,

@@ -1,9 +1,36 @@
 .header {
-  background-color: black;
+  height: 656px;
   color: white;
   display: flex;
   justify-content: center;
   position: relative;
+}
+
+.header h1 {
+  font-size: 120px;
+  margin-left: -15px;
+  font-weight: 600;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+  background: url("https://res.cloudinary.com/dueabak8m/image/upload/v1693127293/upload/e7emalowqbyayikqccyp.png");
+  -webkit-background-clip: text;
+  background-position: 0 0;
+  animation: back 100s linear infinite;
+}
+@keyframes back {
+  100% {
+    background-position: 2000px 0;
+  }
+}
+.header p {
+  font-size: 20px;
+  margin-top: -2%;
+  color: transparent;
+  -webkit-text-stroke: 1px #fff;
+}
+.header.listHeader {
+  height: 200px;
+  background-color: #4d3c77;
 }
 .headerContainer {
   width: 100%;
@@ -14,6 +41,7 @@
   margin: 20px 0px 0px 0px;
 }
 .headerList {
+  margin-top: 50px;
   display: flex;
   gap: 40px;
   margin-bottom: 50px;
@@ -32,10 +60,9 @@
   margin: 20px 0px;
 }
 .headerBtn {
-  background-color: grey;
   color: white;
   font-weight: 500;
-  border: none;
+  border-color: white;
   padding: 10px;
   cursor: pointer;
 }
@@ -70,6 +97,7 @@
   height: 50px;
   outline: none;
   font-size: 20px;
+  width: 100%;
 }
 .headerSearchText {
   color: lightgrey;
@@ -87,4 +115,49 @@
   background-color: white;
   color: black;
   border: 1px black solid;
+}
+.headerTitle {
+  position: relative;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+}
+
+@media screen and (max-width: 600px) {
+  .header h1 {
+    font-size: 100px;
+    font-weight: 100;
+  }
+  .active {
+    display: inline-block;
+  }
+  .header p {
+    font-size: 15px;
+  }
+  .headerList {
+    gap: 3px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .header h1 {
+    font-size: 70px;
+    font-weight: 100;
+  }
+
+  .header p {
+    font-size: 15px;
+  }
+  .headerList {
+    gap: 3px;
+  }
+}
+
+@media screen and (max-width: 300px) {
+  .header h1 {
+    font-size: 50px;
+    font-weight: 100;
+  }
+
+  .headerList {
+    display: inline;
+  }
 }

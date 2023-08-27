@@ -5,6 +5,7 @@ import Navbar from "../../components/navbar/Navbar";
 import SearchItems from "../../components/searchItems/SearchItems";
 import "./list.css";
 import useFetch from "../../hooks/userFetch";
+import Footer from "../../components/footer/Footer";
 
 const List = () => {
   const fest = useLocation();
@@ -34,7 +35,7 @@ const List = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar type="list" />
       <Header type="list" />
       <div className="listContainer">
         <div className="listWrapper">
@@ -82,6 +83,7 @@ const List = () => {
           </div>
         </div>
       </div>
+      <Footer />
     </div>
   );
 };

@@ -1,10 +1,11 @@
 .navbar {
   height: 50px;
-  background-color: black;
   display: flex;
   justify-content: center;
 }
-
+.navbar.listNavbar {
+  background-color: #4d3c77;
+}
 .navContainer {
   width: 100%;
   max-width: 1024px;
@@ -17,9 +18,10 @@
   font-weight: 500;
 }
 .navButton {
-  /* margin-left: 20px;
-  border: none;
-  padding: 5px 10px;
-  cursor: pointer; */
   color: white;
+}
+.userName {
+  display: inline;
+  margin-right: 10px;
+  cursor: pointer;
 }

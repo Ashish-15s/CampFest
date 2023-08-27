@@ -4,24 +4,22 @@ import Featured from "../../components/featured/Featured";
 import "./home.css";
 import EventList from "../../components/eventList/EventList";
 import FeaturedEvents from "../../components/featuredEvents/FeaturedEvents";
-import MailList from "../../components/mailList/MailList";
+import Footer from "../../components/footer/Footer";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <Header />
-      <div className="homeContainer">
-        <Featured />
-        <h4 className="homeTitle">
-          <b> Browse by fest type</b>
-        </h4>
-        <EventList />
-        <h4 className="homeTitle">
-          <b>Featured Fest</b>{" "}
-        </h4>
-        <FeaturedEvents />
-        <MailList />
+      <div className="headerImg">
+        <Navbar />
+        <Header />
+        <div className="homeContainer">
+          <Featured />
+          <h4 className="homeTitle"></h4>
+          <EventList />
+          <h4 className="homeTitle"></h4>
+          <FeaturedEvents />
+          <Footer />
+        </div>
       </div>
     </div>
   );

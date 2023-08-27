@@ -3,7 +3,10 @@
   flex-direction: column;
   align-items: center;
   margin-top: 20px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
+
 .eventWrapper {
   width: 100%;
   max-width: 1024px;
@@ -18,14 +21,14 @@
   right: 0;
   border: none;
   padding: 10px 20px;
-  background-color: blue;
+  background-color: black;
   color: white;
   font-weight: bold;
   border-radius: 5px;
   cursor: pointer;
 }
 .eventTitle {
-  font-size: 24px;
+  font-size: 50px;
 }
 .eventAddress {
   font-size: 12px;
@@ -35,6 +38,7 @@
 }
 .eventCollege {
   color: blue;
+  font-size: 30px;
   font-weight: 500;
 }
 .eventPriceHighlight {
@@ -54,6 +58,8 @@
   object-fit: cover;
 }
 .eventDetails {
+  border: 2px solid grey;
+  border-radius: 20px;
   display: flex;
   justify-content: space-between;
   gap: 20px;
@@ -65,14 +71,9 @@
 .eventDesc {
   font-size: 14px;
   margin-top: 20px;
-}
-.eventDetailsPrice {
-  flex: 1;
-  background-color: grey;
-  padding: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
+  border: 10px;
+  border-color: black;
+  margin-bottom: 100px;
 }
 .eventDetailPrice > h2 {
   font-weight: 300;
