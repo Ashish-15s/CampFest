@@ -4,6 +4,8 @@ import "./register.css";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
+const BASE_URL = "https://campfest.onrender.com";
+
 const Register = () => {
   const [info, setInfo] = useState({});
   const navigate = useNavigate();
@@ -16,7 +18,7 @@ const Register = () => {
       const newUser = {
         ...info,
       };
-      await axios.post("/auth/register", newUser);
+      await axios.post(`${BASE_URL}/auth/register`, newUser);
       navigate("/login");
     } catch (err) {
       setErr(true);

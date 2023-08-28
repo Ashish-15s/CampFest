@@ -5,11 +5,13 @@ import mongoose from "mongoose";
 import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import eventRoute from "./routes/event.js";
+import cors from "cors";
 import cookieParser from "cookie-parser";
 
 const app = express();
 dotenv.config();
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
 app.use(bodyParser.json()); // Send JSON responses
 app.use(cookieParser());
