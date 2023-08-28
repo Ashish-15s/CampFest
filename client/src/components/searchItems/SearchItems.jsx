@@ -23,7 +23,7 @@ const SearchItems = ({ item }) => {
             <b>{item.city}</b>
           </span>
           <span className="siSubtitle">Additional attraction of fest</span>
-          <span className="siFeatures">descripton about venue</span>
+          <span className="siFeatures">{item.desc}</span>
           <span className="siCancelOp">Free cancellatioin</span>
           <span className="siCancelOpSubtitle">
             You can cancel later, so lock in this great price today!
