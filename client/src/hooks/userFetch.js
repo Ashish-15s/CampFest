@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-// const BASE_URL = "https://campfest.onrender.com";
+const BASE_URL = "https://campfest.onrender.com";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
@@ -14,7 +14,7 @@ const useFetch = (url) => {
       setLoading(true);
 
       try {
-        const res = await axios.get(url);
+        const res = await axios.get(`${BASE_URL}${url}`);
         setData(res.data);
       } catch (err) {
         setError(true);
@@ -27,7 +27,7 @@ const useFetch = (url) => {
   const reFetch = async () => {
     setLoading(true);
     try {
-      const res = await axios.get(url);
+      const res = await axios.get(`${BASE_URL}${url}`);
       setData(res.data);
     } catch (err) {
       setError(true);
