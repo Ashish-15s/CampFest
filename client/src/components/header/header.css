@@ -123,6 +123,9 @@
 }
 
 @media screen and (max-width: 600px) {
+  .header {
+    height: 500px;
+  }
   .header h1 {
     font-size: 100px;
     font-weight: 100;
@@ -138,6 +141,9 @@
   }
 }
 @media screen and (max-width: 400px) {
+  .header {
+    height: 400px;
+  }
   .header h1 {
     font-size: 70px;
     font-weight: 100;
@@ -152,6 +158,9 @@
 }
 
 @media screen and (max-width: 300px) {
+  .header {
+    height: 700px;
+  }
   .header h1 {
     font-size: 50px;
     font-weight: 100;
