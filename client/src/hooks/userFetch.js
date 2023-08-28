@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import axios from "axios";
 
-const BASE_URL = "https://campfest.onrender.com/";
+const BASE_URL = "https://campfest.onrender.com";
 
 const useFetch = (url) => {
   const [data, setData] = useState([]);
