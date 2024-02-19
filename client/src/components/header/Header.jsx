@@ -27,8 +27,9 @@ const Header = ({ type }) => {
     });
     navigate("/events", { state: { festName, collegeName, cityName } });
   };
+
   return (
-    <div className="header">
+    <div className={type === "list" ? "header listHeader" : "header"}>
       <div
         className={
           type === "list" ? "headerContainer listMode" : "headerContainer"
@@ -53,7 +54,10 @@ const Header = ({ type }) => {
         {type !== "list" && (
           <>
             <h1 className="headerTitle">CampFest</h1>
-            <p className="headerDesc">One place to explore college fests</p>
+            <p className="headerDesc">
+              One place to explore college fests <newline />
+            </p>
+            <p>Register and explore all nearby college fests </p>
             {!user && (
               <button className="headerBtn btn btn-outline-secondary">
                 sign/register

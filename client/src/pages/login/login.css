@@ -1,32 +1,18 @@
-.login {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
+.gradient-custom {
+  /* fallback for old browsers */
+  background: #6a11cb;
 
-.lContainer {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
+  /* Chrome 10-25, Safari 5.1-6 */
+  background: -webkit-linear-gradient(
+    to right,
+    rgba(106, 17, 203, 1),
+    rgba(37, 117, 252, 1)
+  );
 
-.lInput {
-  height: 30px;
-  padding: 10px;
-}
-
-.lButton {
-  border: none;
-  padding: 10px 20px;
-  background-color: #0071c2;
-  color: white;
-  font-weight: bold;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-.lButton:disabled {
-  background-color: #0071c28c;
-  cursor: not-allowed;
+  /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  background: linear-gradient(
+    to right,
+    rgba(106, 17, 203, 1),
+    rgba(37, 117, 252, 1)
+  );
 }

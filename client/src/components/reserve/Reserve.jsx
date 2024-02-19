@@ -11,7 +11,13 @@ const Reserve = ({ setOpen, eventId }) => {
           className="rClose"
           onClick={() => setOpen(false)}
         />
-        <span>information about participant</span>
+        <span>
+          <input placeholder="Enter no. of tickets"></input>
+          <button type="submit" className="btn5">
+            {" "}
+            Pay{" "}
+          </button>
+        </span>
       </div>
     </div>
   );

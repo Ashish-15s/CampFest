@@ -1,11 +1,12 @@
 #cards_landscape_wrap-2 {
-  margin-top: -100px;
   text-align: center;
-  background: #f7f7f7;
-  width: 1200px;
+  background: #ffff;
+  margin-top: 130px;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
+
 #cards_landscape_wrap-2 .container {
-  padding-top: 80px;
   padding-bottom: 10px;
 }
 #cards_landscape_wrap-2 a {
@@ -16,7 +17,7 @@
   border-radius: 5px;
 }
 #cards_landscape_wrap-2 .card-flyer .image-box {
-  background: #ffffff;
+  background: #ffff;
   overflow: hidden;
   box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
@@ -44,7 +45,7 @@
   padding: 30px 18px;
 }
 #cards_landscape_wrap-2 .card-flyer {
-  background: #ffffff;
+  background: #ffff;
   margin-top: 50px;
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;
@@ -54,7 +55,7 @@
   box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.4);
 }
 #cards_landscape_wrap-2 .card-flyer:hover {
-  background: #fff;
+  background: #ffff;
   box-shadow: 0px 15px 26px rgba(0, 0, 0, 0.5);
   -webkit-transition: all 0.2s ease-in;
   -moz-transition: all 0.2s ease-in;

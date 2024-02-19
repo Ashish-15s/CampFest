@@ -1,8 +1,15 @@
+.eList {
+  width: 100%;
+  background-color: #000000;
+}
 #cards_landscape_wrap-2EventList {
-  margin-top: -20px;
+  margin: 5%;
   text-align: center;
-  width: 1200px;
-  background: #f7f7f7;
+  padding-top: 50px;
+
+  color: white;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 #cards_landscape_wrap-2EventList .container {
   padding-bottom: 10px;

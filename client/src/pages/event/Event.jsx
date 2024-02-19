@@ -7,13 +7,13 @@ import {
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { useContext, useState } from "react";
 import Header from "../../components/header/Header";
-import MailList from "../../components/mailList/MailList";
 import Navbar from "../../components/navbar/Navbar";
 import "./event.css";
 import useFetch from "../../hooks/userFetch";
 import { useLocation, useNavigate } from "react-router-dom";
 import Reserve from "../../components/reserve/Reserve";
 import { AuthContext } from "../../context/AuthContext";
+import Footer from "../../components/footer/Footer";
 
 const Event = () => {
   const location = useLocation();
@@ -46,7 +46,7 @@ const Event = () => {
 
   return (
     <div>
-      <Navbar />
+      <Navbar type="list" />
       <Header type="list" />
       {loading ? (
         "loading"
@@ -82,9 +82,11 @@ const Event = () => {
           {/* slider end */}
 
           <div className="eventWrapper">
-            <button className="registerNow">Register Now</button>
+            <button onClick={handleClick} className="registerNow">
+              Register Now
+            </button>
             <h1 className="eventTitle"> {data.title}</h1>
-            <div className="evenAddress">
+            <div className="eventAddress">
               <FontAwesomeIcon icon={faLocationDot} />
               <span>{data.city} </span>
             </div>
@@ -107,33 +109,11 @@ const Event = () => {
             <div className="eventDetails">
               <div className="eventDetailsText">
                 <h1 className="eventTitle">{data.title}</h1>
-                <p className="eventDesc">
-                  Kazakhstan greatest country in the world. All other countries
-                  are run by little girls. Kazakhstan number one exporter of
-                  potassium. Other countries have inferior potassium. Kazakhstan
-                  home of Tinshein swimming pool. Its length thirty meter and
-                  width six meter. Filtration system a marvel to behold. It
-                  remove 80 percent of human solid waste. Kazakhstan, Kazakhstan
-                  you very nice place. From Plains of Tarashek to Norther fence
-                  of Jewtown. Kazakhstan friend of all except Uzbekistan. They
-                  very nosey people with bone in their brain. Kazakhstan
-                  industry best in the world. We incented toffee and trouser
-                  belt. Kazakhstans prostitutes cleanest in the region. Except
-                  of course Turkmenistans Kazakhstan, Kazakhstan you very nice
-                  place. From Plains of Tarashek to Norther fence of Jewtown.
-                  Come grasp the might penis of our leader. From junction with
-                  the testes to tip of its face!
-                </p>
-              </div>
-              <div className="eventDetailsPrice">
-                <h2>
-                  <b>₹99</b>
-                </h2>
-                <button onClick={handleClick}>Register Now</button>
+                <p className="eventDesc">{data.desc}</p>
               </div>
             </div>
           </div>
-          <MailList />
+          <Footer />
         </div>
       )}
       {openModal && <Reserve setOpen={setOpenModal} eventId={id} />}
