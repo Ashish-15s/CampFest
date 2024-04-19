@@ -9,6 +9,7 @@ import Footer from "../../components/footer/Footer";
 
 const List = () => {
   const fest = useLocation();
+  console.log(fest);
   const [festName, setFestName] = useState(fest.state.festName);
   const [collegeName, setCollegeName] = useState(fest.state.collegeName);
   const [cityName, setCityName] = useState(fest.state.cityName);

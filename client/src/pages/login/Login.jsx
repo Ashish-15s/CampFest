@@ -66,7 +66,9 @@ const Login = () => {
                   >
                     Login
                   </button>
-                  {error && <span>wrong username or password</span>}
+                  {error && (
+                    <span className="errorMsg">wrong username or password</span>
+                  )}
                 </div>
 
                 <div>

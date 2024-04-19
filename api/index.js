@@ -28,6 +28,12 @@ app.use(express.json());
 app.use("/users", usersRoute);
 app.use("/auth", authRoute);
 app.use("/event", eventRoute);
+
+app.post("/api/create-checkout-session", async (res, req) => {
+  const product = req.body;
+  console.log(product);
+});
+
 app.use((err, req, res, next) => {
   const errStatus = err.status || 500;
   const errMessage = err.message || "something went wrong";

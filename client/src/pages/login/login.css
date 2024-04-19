@@ -16,3 +16,8 @@
     rgba(37, 117, 252, 1)
   );
 }
+
+.errorMsg {
+  display: block;
+  color: red;
+}

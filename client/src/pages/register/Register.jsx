@@ -49,6 +49,7 @@ const Register = () => {
                       id="password"
                       className="form-control form-control-lg"
                       placeholder="password"
+                      minlength="4"
                       onChange={handleChange}
                     />
                   </div>
@@ -85,7 +86,11 @@ const Register = () => {
                   >
                     Sign Up
                   </button>{" "}
-                  {error && <span>username or email already exists</span>}
+                  {error && (
+                    <span className="errorMsg">
+                      username or email already exists
+                    </span>
+                  )}
                 </div>
 
                 <div>

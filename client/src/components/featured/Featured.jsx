@@ -1,5 +1,8 @@
 import useFetch from "../../hooks/userFetch";
 import "./featured.css";
+import { useNavigate } from "react-router-dom";
+import { useContext } from "react";
+import { SearchContext } from "../../context/SearchContext";
 
 const Featured = () => {
   const { data, loading, error } = useFetch(
@@ -24,7 +27,9 @@ const Featured = () => {
       img: "https://images.herzindagi.info/image/2022/Oct/tourist-places-to-visit-in-pune.jpg",
     },
   ];
+  const navigate = useNavigate();
 
+  const { dispatch } = useContext(SearchContext);
   return (
     <div>
       {loading ? (
@@ -38,7 +43,26 @@ const Featured = () => {
               <div className="row">
                 {data &&
                   cities.map((row, i) => (
-                    <div className="col-xs-12 col-sm-6 col-md-3 col-lg-3">
+                    <div
+                      className="col-xs-12 col-sm-6 col-md-3 col-lg-3"
+                      onClick={() => {
+                        dispatch({
+                          type: "NEW_SEARCH",
+                          payload: {
+                            festName: "",
+                            collegeName: "",
+                            cityName: row.city,
+                          },
+                        });
+                        navigate("/events", {
+                          state: {
+                            festName: "",
+                            collegeName: "",
+                            cityName: row.city,
+                          },
+                        });
+                      }}
+                    >
                       <div className="card-flyer">
                         <div className="text-box">
                           <div className="image-box">
