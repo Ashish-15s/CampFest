@@ -2,7 +2,7 @@ import "./featuredEvents.css";
 import useFetch from "../../hooks/userFetch";
 import { Link } from "react-router-dom";
 const FeaturedEvents = () => {
-  const { data, loading, error } = useFetch("/event?featured=true");
+  const { data, loading } = useFetch("/event?featured=true");
   return (
     <div className="fe">
       {loading ? (

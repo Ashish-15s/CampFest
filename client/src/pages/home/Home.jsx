@@ -14,9 +14,9 @@ const Home = () => {
         <Header />
         <div className="homeContainer">
           <Featured />
-          <h4 className="homeTitle"></h4>
+          <h4 className="homeTitle" />
           <EventList />
-          <h4 className="homeTitle"></h4>
+          <h4 className="homeTitle" />
           <FeaturedEvents />
           <Footer />
         </div>

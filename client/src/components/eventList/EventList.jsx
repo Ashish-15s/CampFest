@@ -2,7 +2,7 @@ import "./eventList.css";
 import useFetch from "../../hooks/userFetch";
 
 const EventList = () => {
-  const { data, loading, error } = useFetch("/event/countByType");
+  const { data, loading } = useFetch("/event/countByType");
 
   const images = [
     "https://b2662075.smushcdn.com/2662075/wp-content/uploads/@2x-Blog-Technical-Skills-animation.gif?lossy=0&strip=1&webp=1",
