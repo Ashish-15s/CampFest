@@ -10,9 +10,13 @@ import Footer from "../../components/footer/Footer";
 const List = () => {
   const fest = useLocation();
   console.log(fest);
-  const [festName, setFestName] = useState(fest.state.festName);
-  const [collegeName, setCollegeName] = useState(fest.state.collegeName);
-  const [cityName, setCityName] = useState(fest.state.cityName);
+  var [festName, setFestName] = useState(fest.state.festName);
+  var [collegeName, setCollegeName] = useState(fest.state.collegeName);
+  var [cityName, setCityName] = useState(fest.state.cityName);
+
+  festName = festName.toLowerCase();
+  cityName = cityName.toLowerCase();
+  collegeName = collegeName.toLowerCase();
 
   var url = `/event/?title=${festName}&college=${collegeName}&city=${cityName}`;
 
