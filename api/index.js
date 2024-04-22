@@ -6,10 +6,12 @@ import authRoute from "./routes/auth.js";
 import usersRoute from "./routes/users.js";
 import eventRoute from "./routes/event.js";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
 dotenv.config();
 
+app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false })); // Parses urlencoded bodies
 app.use(bodyParser.json()); // Send JSON responses
 app.use(cookieParser());
