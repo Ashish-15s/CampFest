@@ -4,9 +4,12 @@ import { AuthContext } from "../../context/AuthContext";
 import axios from "axios";
 import { Link, useNavigate } from "react-router-dom";
 
+const BASE_URL = "https://campfest.onrender.com";
+
 const Register = () => {
   const [info, setInfo] = useState({});
-  const navigate = useNavigate();
+  // const navigate = useNavigate();
+  const [msg, setMsg] = useState("");
   const [error, setErr] = useState();
   const handleChange = (e) => {
     setInfo((prev) => ({ ...prev, [e.target.id]: e.target.value }));
@@ -16,8 +19,9 @@ const Register = () => {
       const newUser = {
         ...info,
       };
-      await axios.post("/auth/register", newUser);
-      navigate("/login");
+      await axios.post(`${BASE_URL}/auth/register`, newUser);
+      // navigate("/login");
+      setMsg("registered");
     } catch (err) {
       setErr(true);
     }
@@ -89,6 +93,11 @@ const Register = () => {
                   {error && (
                     <span className="errorMsg">
                       username or email already exists
+                    </span>
+                  )}
+                  {msg && (
+                    <span className="verifyMsg">
+                      Check your email to verify
                     </span>
                   )}
                 </div>

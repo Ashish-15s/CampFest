@@ -4,6 +4,7 @@ import List from "./pages/list/List.jsx";
 import Event from "./pages/event/Event.jsx";
 import Login from "./pages/login/Login.jsx";
 import Register from "./pages/register/Register.jsx";
+import EmailVerify from "./pages/emailVerify/EmailVerify.jsx";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route path="/events/:id" element={<Event />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/register" element={<Register />}></Route>
+        <Route path="/:id/verify/:token" element={<EmailVerify />}></Route>
       </Routes>
     </BrowserRouter>
   );
