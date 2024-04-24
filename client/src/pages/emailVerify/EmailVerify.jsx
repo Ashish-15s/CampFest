@@ -4,7 +4,7 @@ import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 
 const BASE_URL = "https://campfest.onrender.com";
-
+console.log("entered");
 const EmailVerify = () => {
   const [validUrl, setValidUrl] = useState(false);
   const param = useParams();
