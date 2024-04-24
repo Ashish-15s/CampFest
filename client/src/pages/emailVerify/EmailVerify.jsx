@@ -5,9 +5,6 @@ import axios from "axios";
 
 const BASE_URL = "https://campfest.onrender.com";
 
-//
-//`${BASE_URL}/auth/register`, newUser
-
 const EmailVerify = () => {
   const [validUrl, setValidUrl] = useState(false);
   const param = useParams();
